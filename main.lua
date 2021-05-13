@@ -1,5 +1,6 @@
 -- This is bad code, this is PROTOTYPE COOOOODE
 _ = {}
+keys = {}
 local state = "battle"
 require('states.battle')
 local canvas, canvas_offset_x, canvas_offset_y, canvas_scale
@@ -41,9 +42,9 @@ function love.draw()
 end
 
 function love.keypressed(key)
-  ichor("keydown", key)
+  keys[key] = true
 end
 
 function love.keyreleased(key)
-  ichor("keyup", key)
+  keys[key] = false
 end
