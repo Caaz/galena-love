@@ -2,8 +2,11 @@
 _["battle"] = {
   draw = function(this)
     love.graphics.setColor(255,255,255)
-    text = "Kets pressed:"
+    text = "Keys pressed:"
+		_i = 0
     for key, value in pairs(keys) do
+			love.graphics.circle("fill", _i, 50, 10)
+			_i = _i + 5
       if value then
         text = string.format("%s %s", text, key)
       end
